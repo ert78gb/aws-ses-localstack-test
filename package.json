@@ -1,0 +1,42 @@
+{
+  "name": "@ert78gb/aws-ses-localstack-test",
+  "version": "0.0.1",
+  "description": "Test util for AWS Simple Email Service testion via Localstack",
+  "main": "lib/index.js",
+  "type": "module",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "tap"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ert78gb/aws-ses-localstack-test.git"
+  },
+  "keywords": [
+    "AWS",
+    "SES",
+    "Email",
+    "Localstack",
+    "test",
+    "util"
+  ],
+  "author": "Robert Kiss <ert78gb@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ert78gb/aws-ses-localstack-test/issues"
+  },
+  "homepage": "https://github.com/ert78gb/aws-ses-localstack-test#readme",
+  "devDependencies": {
+    "@aws-sdk/client-ses": "^3.245.0",
+    "desm": "^1.3.0",
+    "dotenv": "^16.0.3",
+    "tap": "^16.3.3"
+  },
+  "dependencies": {
+    "chownr": "2.0.0",
+    "chmodr": "1.2.0"
+  }
+}

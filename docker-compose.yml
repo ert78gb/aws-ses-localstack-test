@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  localstack:
+    image: localstack/localstack
+    restart: always
+    environment:
+      AWS_REGION: "${AWS_REGION}"
+      SES_FROM_EMAIL_ADDRESS: "${AWS_SES_FROM_EMAIL_ADDRESS}"
+      SERVICES: ses
+    ports:
+      - "4566:4566"
+    volumes:
+      - ./test/_localstack-hooks/ready:/etc/localstack/init/ready.d/
+      - ./test/_localstack-volume:/var/lib/localstack
