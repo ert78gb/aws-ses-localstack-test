@@ -5,6 +5,9 @@
   "main": "lib/index.js",
   "exports": "./lib/index.js",
   "type": "module",
+  "files": [
+    "lib/"
+  ],
   "directories": {
     "lib": "lib",
     "test": "test"
