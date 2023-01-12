@@ -10,7 +10,12 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    name: Test on node ${{ matrix.node-version }} and ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        node-version: [ 14, 16, 18, 19 ]
+        os: [ ubuntu-latest, macOS-latest ]
     timeout-minutes: 5
     permissions:
       contents: read
