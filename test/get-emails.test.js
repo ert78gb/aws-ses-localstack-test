@@ -1,7 +1,6 @@
 import { test } from 'tap'
 
-import deleteEmails from '../lib/delete-emails.js'
-import getEmails from '../lib/get-emails.js'
+import {deleteEmails, getEmails } from '../lib/index.js'
 import getLocalstackDirectory from './_helpers/get-localstack-directory.js'
 import sendEmail from './_helpers/send-email.js'
 

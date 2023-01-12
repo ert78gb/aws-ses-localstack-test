@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Test util for AWS Simple Email Service testion via Localstack",
   "main": "lib/index.js",
+  "exports": "./lib/index.js",
   "type": "module",
   "directories": {
     "lib": "lib",
