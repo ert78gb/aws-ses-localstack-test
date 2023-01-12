@@ -34,11 +34,17 @@ jobs:
       - name: Install dependencies
         run: npm i --ignore-scripts
 
+      # for debugging list the current user info
+      - run: id
+
+      # for debugging list the directory/file ownerships
       - run: cd test && ls -laR
 
       - run: npm t
 
+      # for debugging list the directory/file ownerships
       - run: cd test && ls -laR
+        if: always()
 
       - run: npx semantic-release
         env:
