@@ -40,7 +40,7 @@ jobs:
       # for debugging list the directory/file ownerships
       - run: cd test && ls -laR
 
-      - run: npm t
+      - run: sudo npm t
 
       # for debugging list the directory/file ownerships
       - run: cd test && ls -laR
