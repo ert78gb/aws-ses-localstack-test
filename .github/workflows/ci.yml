@@ -34,7 +34,11 @@ jobs:
       - name: Install dependencies
         run: npm i --ignore-scripts
 
+      - run: cd test && ls -laR
+
       - run: npm t
+
+      - run: cd test && ls -laR
 
       - run: npx semantic-release
         env:
