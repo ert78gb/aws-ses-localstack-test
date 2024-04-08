@@ -43,7 +43,7 @@
     "tap": "^16.3.3"
   },
   "dependencies": {
-    "chownr": "2.0.0",
+    "chownr": "3.0.0",
     "chmodr": "1.2.0"
   }
 }
