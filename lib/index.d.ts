@@ -30,5 +30,5 @@ export interface DeleteEmailsOptions {
     id?: string;
 }
 
-export function getEmails(options: GetEmailsOptions): Promise<LocalstackEmail>
+export function getEmails(options: GetEmailsOptions): Promise<LocalstackEmail[]>
 export function deleteEmails(options: DeleteEmailsOptions): Promise<any>
