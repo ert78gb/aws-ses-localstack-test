@@ -7,19 +7,30 @@ This package provides the following methods to help with integration or e2e test
 
 ## How to use
 
-- mount the `/var/lib/localstack` directory from the docker image to a local folder.
-  Mount the `/var/lib/localstack` directory, because if only the `/var/lib/localstack/tmp/state/ses` has been mounted then the docker image will not start
+Query all emails. 
 
 ```javascript
-import {deleteEmails, getEmails } from '@ert78gb/aws-ses-localstack-test'
+import { getEmails } from '@ert78gb/aws-ses-localstack-test'
 
-const localstackMounted = 'path/to/the/locally/mounted/folder/'
+const sentEmails = getEmails({
+  baseUrl: 'http://localhost:4566/', // URI of the localstack instance
+})
+```
 
-await deleteEmails({directory: localstackMounted})
+Query emails by id. Logically should return only 1 email, but who knows, so the result is an array
 
-// send email
+```javascript
+import { getEmails } from '@ert78gb/aws-ses-localstack-test'
 
-const sentEmails = getEmails({directory: localstackMounted})
+const sentEmails = getEmails({baseUrl: 'http://localhost:4566/', id: 'message-id'})
+```
+
+Query emails by sender/source
+
+```javascript
+import { getEmails } from '@ert78gb/aws-ses-localstack-test'
+
+const sentEmails = getEmails({baseUrl: 'http://localhost:4566/', source: 'email@example.com'})
 ```
 
 Sent email structure. Uses the original property names as localstack generates the json files
@@ -41,4 +52,19 @@ interface LocalstackEmail {
   },
   Timestamp: Date;
 }
+```
+Delete all emails
+
+```javascript
+import { deleteEmails } from '@ert78gb/aws-ses-localstack-test'
+
+const sentEmails = deleteEmails({baseUrl: 'http://localhost:4566/'})
+```
+
+Delete email by id
+
+```javascript
+import { deleteEmails } from '@ert78gb/aws-ses-localstack-test'
+
+const sentEmails = deleteEmails({baseUrl: 'http://localhost:4566/', id: 'message-id'})
 ```
